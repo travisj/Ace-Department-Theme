@@ -1,0 +1,12 @@
+/*
+Theme Name: Ace Department Theme
+Theme URI:
+Description:
+Author: 
+Author URI:
+Version: 0.01
+Template: bp-default
+*/
+
+@import url( ../../plugins/buddypress/bp-themes/bp-default/_inc/css/default.css );
+@import url( ../../plugins/buddypress/bp-themes/bp-default/_inc/css/adminbar.css );
