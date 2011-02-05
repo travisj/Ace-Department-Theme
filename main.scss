@@ -136,7 +136,7 @@ body {
 		@include text-replace("logo/header.png", 214px, 146px);
 		margin: 0;
 		left: 0;
-		top: 0;
+		top: -10px;
 
 		a {
 			position: absolute;
@@ -167,7 +167,7 @@ body {
 				font-size: 24px;
 				font-weight: bold;
 				font-weight: normal;
-				padding: 3px 15px 1px;
+				padding: 3px 25px 1px;
 				text-transform: lowercase;
 
 				&:hover {
@@ -185,7 +185,10 @@ body {
 }
 
 #container {
-	margin: 10px 0 20px 0;
+	margin:  0 0 20px 0;
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+	
 
 	ul.item-list {
 		li {
