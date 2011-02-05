@@ -1,0 +1,195 @@
+// Definitions
+
+$dark-gray: #585858;
+$mid-gray: #cdcdcd;
+$light-gray: #e7e7e7;
+$dark-teal: #6e8994;
+$light-teal: #bdd3d0;
+$very-light-teal: #e9f1f0;
+$pale-yellow: #fbfbb3;
+$bright-yellow: #fafa5c;
+$melon: #fe9387;
+$dark-melon: #de6b5e;
+$blue: #3385ce;
+$light-blue: #1993ff;
+
+$font-size-default: 12px;
+
+$serif: "Georgia", serif;
+$sans-serif: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$league-gothic: "league-gothic-1", "league-gothic-2", sans-serif;
+
+
+// Mixins
+
+@mixin padded-width($width, $padding-left: 0, $padding-right: 0) {
+	width: $width - $padding-left - $padding-right;
+	padding-left: $padding-left;
+	padding-right: $padding-right;
+}
+
+@mixin padded-height($height, $padding-top: 0, $padding-bottom: 0) {
+	height: $height - $padding-top - $padding-bottom;
+	padding-top: $padding-top;
+	padding-bottom: $padding-bottom;
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-o-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-khtml-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin box-shadow($h, $v, $blur, $color, $inset: false) {
+	@if $inset {	
+		-moz-box-shadow: inset $h $v $blur $color;
+		-webkit-box-shadow: inset $h $v $blur $color;
+		box-shadow: inset $h $v $blur $color;
+	} @else {
+		-moz-box-shadow: $h $v $blur $color;
+		-webkit-box-shadow: $h $v $blur $color;
+		box-shadow: $h $v $blur $color;
+	}
+}
+
+@mixin text-shadow($h, $v, $blur, $color) {
+  -moz-text-shadow: $h $v $blur $color;
+  -webkit-text-shadow: $h $v $blur $color;
+  text-shadow: $h $v $blur $color;
+}
+
+@mixin text-replace($image, $w: 100%, $h: 50px) {
+	position: relative;
+	display: block;
+	background: transparent url(images/#{$image}) left top no-repeat;
+	text-indent: -9999px !important;
+	height: $h;
+	width: $w;
+	
+}
+
+
+// Rules 
+
+div {
+	position: relative;
+}
+
+.clear {
+	background: transparent !important;
+	border: 0 !important;
+	display: block !important;
+	float: both !important;
+	height: 1px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	position: relative !important;
+}
+
+body {
+	font-family: $sans-serif ;
+	font-size: $font-size-default;
+	color: $dark-gray;
+	background: transparent url(images/bg/body.png) left top repeat;
+	line-height: 1.8;
+
+	a {
+		color: $melon;
+		text-decoration: none;
+		
+		&:hover {
+			color: $dark-melon;
+		}
+	}
+
+	h1, h2, h3 {
+		font-weight: normal;
+		font-family: $league-gothic;
+		color: $dark-teal;
+		margin: 0;
+	}
+
+	h1 {
+		font-size: 60px;
+	}
+
+	h2 {
+		font-size: 48px;
+	}
+
+	h3 {
+		font-size: 36px;
+	}
+
+
+
+}
+
+#header {
+	height: 150px;
+	background: #fff !important;
+
+	h1#logo {
+		@include text-replace("logo/header.png", 214px, 146px);
+		margin: 0;
+		left: 0;
+		top: 0;
+
+		a {
+			position: absolute;
+			height: 146px;
+			width: 214px;
+			left: 0;
+			top: 0;
+		}
+	}
+
+	#nav {
+		background: $pale-yellow;
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		right: 0;
+		max-width: 100%;
+
+		
+
+		li {
+			margin: 0;
+
+			a {
+				background: transparent;
+				color: $dark-gray;
+				font-family: $league-gothic;
+				font-size: 24px;
+				font-weight: bold;
+				font-weight: normal;
+				padding: 3px 15px 1px;
+				text-transform: lowercase;
+
+				&:hover {
+					background: $bright-yellow;
+				}
+			}
+
+			
+
+			&.selected a {
+				background: $bright-yellow;
+			}
+		}
+	}
+}
+
+#container {
+	margin: 10px 0 20px 0;
+
+	ul.item-list {
+		li {
+			border: 0;
+		}
+	}
+}

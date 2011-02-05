@@ -11,3 +11,4 @@ Tags: buddypress
 
 @import url( ../../plugins/buddypress/bp-themes/bp-default/_inc/css/default.css );
 @import url( ../../plugins/buddypress/bp-themes/bp-default/_inc/css/adminbar.css );
+@import url(main.css);

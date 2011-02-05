@@ -1,0 +1,82 @@
+div {
+  position: relative; }
+
+.clear {
+  background: transparent !important;
+  border: 0 !important;
+  display: block !important;
+  float: both !important;
+  height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important; }
+
+body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 12px;
+  color: #585858;
+  background: transparent url(images/bg/body.png) left top repeat;
+  line-height: 1.8; }
+  body a {
+    color: #fe9387;
+    text-decoration: none; }
+    body a:hover {
+      color: #de6b5e; }
+  body h1, body h2, body h3 {
+    font-weight: normal;
+    font-family: "league-gothic-1", "league-gothic-2", sans-serif;
+    color: #6e8994;
+    margin: 0; }
+  body h1 {
+    font-size: 60px; }
+  body h2 {
+    font-size: 48px; }
+  body h3 {
+    font-size: 36px; }
+
+#header {
+  height: 150px;
+  background: #fff !important; }
+  #header h1#logo {
+    position: relative;
+    display: block;
+    background: transparent url(images/logo/header.png) left top no-repeat;
+    text-indent: -9999px !important;
+    height: 146px;
+    width: 214px;
+    margin: 0;
+    left: 0;
+    top: 0; }
+    #header h1#logo a {
+      position: absolute;
+      height: 146px;
+      width: 214px;
+      left: 0;
+      top: 0; }
+  #header #nav {
+    background: #fbfbb3;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    right: 0;
+    max-width: 100%; }
+    #header #nav li {
+      margin: 0; }
+      #header #nav li a {
+        background: transparent;
+        color: #585858;
+        font-family: "league-gothic-1", "league-gothic-2", sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        font-weight: normal;
+        padding: 3px 15px 1px;
+        text-transform: lowercase; }
+        #header #nav li a:hover {
+          background: #fafa5c; }
+      #header #nav li.selected a {
+        background: #fafa5c; }
+
+#container {
+  margin: 10px 0 20px 0; }
+  #container ul.item-list li {
+    border: 0; }

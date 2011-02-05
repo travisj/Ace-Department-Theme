@@ -33,6 +33,11 @@
 
 		<?php wp_head(); ?>
 
+		<!-- typekit -->
+		<script type="text/javascript" src="http://use.typekit.com/jaf1izk.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		
+
 	</head>
 
 	<body <?php body_class() ?> id="bp-default">
@@ -104,6 +109,7 @@
 			<?php do_action( 'bp_header' ) ?>
 
 		</div><!-- #header -->
+		<br class="clear" />
 
 		<?php do_action( 'bp_after_header' ) ?>
 		<?php do_action( 'bp_before_container' ) ?>
