@@ -14,6 +14,11 @@ $blue: #3385ce;
 $light-blue: #1993ff;
 
 $font-size-default: 12px;
+$font-size-h1: 60px;
+$font-size-h2: 48px;
+$font-size-h3: 36px;
+$font-size-h4: 24px;
+$font-size-h5: 14px;
 
 $serif: "Georgia", serif;
 $sans-serif: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -113,15 +118,19 @@ body {
 	}
 
 	h1 {
-		font-size: 60px;
+		font-size: $font-size-h1;
 	}
 
 	h2 {
-		font-size: 48px;
+		font-size: $font-size-h2;
 	}
 
 	h3 {
-		font-size: 36px;
+		font-size: $font-size-h3;
+	}
+
+	h4 {
+		font-size: $font-size-h4;
 	}
 
 
@@ -129,65 +138,167 @@ body {
 }
 
 #header {
-	height: 150px;
+	$header-height: 150px;
+	height: $header-height;
 	background: #fff !important;
+	overflow: hidden;
+	margin: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+
+	$logo-width: 343px;
+	$logo-height: 88px;
 
 	h1#logo {
-		@include text-replace("logo/header.png", 214px, 146px);
+		@include text-replace("logo/header-tagline.png", $logo-width, $logo-height);
 		margin: 0;
-		left: 0;
-		top: -10px;
+		left: 15px;
+		top: 25px;
+		position: absolute;
 
 		a {
 			position: absolute;
-			height: 146px;
-			width: 214px;
+			height: $logo-height;
+			width: $logo-width;
 			left: 0;
 			top: 0;
+			z-index: 3;
 		}
+
 	}
 
 	#nav {
 		background: $pale-yellow;
-		position: relative;
+		position: absolute;
 		width: 100%;
 		overflow: hidden;
 		right: 0;
+		top: $header-height - 20px;;
 		max-width: 100%;
+		height: 45px;
+		margin: 0;
+		padding: 0;
 
+
+		ul {
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			left: 0;
+			top: 0;
+			list-style: none;
 		
 
-		li {
-			margin: 0;
+			li {
+				float: left;
+				margin: 0;
 
-			a {
-				background: transparent;
-				color: $dark-gray;
-				font-family: $league-gothic;
-				font-size: 24px;
-				font-weight: bold;
-				font-weight: normal;
-				padding: 3px 25px 1px;
-				text-transform: lowercase;
+				a {
+					display: block;
+					background: transparent;
+					color: $dark-gray;
+					font-family: $league-gothic;
+					font-size: 24px;
+					font-weight: bold;
+					font-weight: normal;
+					padding: 3px 25px 1px;
+					text-transform: lowercase;
 
-				&:hover {
+					&:hover {
+						background: $bright-yellow;
+					}
+
+					&:focus {
+						outline: none;
+					}
+				}
+
+				
+
+				&.selected a {
 					background: $bright-yellow;
 				}
 			}
+		}
+	} // nav
 
-			
 
-			&.selected a {
-				background: $bright-yellow;
+	#user-account {
+		position: absolute;
+		right: 0;
+		top: 0;
+		text-align: right;
+		padding: 10px ;
+
+		label {
+			float: left;
+			margin: 0 5px 0 0 ;
+			position: relative;
+			top: 2px;
+			color: $light-teal;
+			font-weight: normal;
+			font-family: $league-gothic;
+			text-transform: uppercase;
+			font-size: $font-size-h5;
+		}
+
+		input {
+			float: left;
+		}
+
+		input[type="text"],
+		input[type="password"] {
+			padding: 3px 4px 0;
+			font-weight: normal;
+			font-size: $font-size-default;
+			width: 10em;
+			margin: 0 10px 0 0 ;;
+		}
+
+		a.name,
+		a.avatar {
+			display: block;
+			float: right;
+			margin: 0 0 0 10px;
+
+		}
+
+		a.name {
+			font-family: $league-gothic;
+			color: $light-teal;
+			font-size: $font-size-h4;
+
+			&:hover {
+				color: $melon;
 			}
 		}
 	}
-}
+
+	a#logout-link {
+		position: absolute;
+		color: $mid-gray;
+		right: 10px;
+		top: 105px;
+
+		&:hover {
+			color: $melon;
+		}
+	}
+
+
+} // header 
 
 #container {
-	margin:  0 0 20px 0;
-	border-top-left-radius: 0 !important;
-	border-top-right-radius: 0 !important;
+	margin: 0;
+	border: 0 !important;
+
+	&, #content, #content .padder {
+		border-radius: 0 !important;
+	}
+
+	.padder {
+		border: 0 !important;
+	}
 	
 
 	ul.item-list {
@@ -195,4 +306,37 @@ body {
 			border: 0;
 		}
 	}
+
+	#sidebar {
+		background: transparent;
+	} // sidebar
+
+} // container 
+
+#search-bar {
+	z-index: 1;
+}
+
+#search-form {
+	display: none; // fixme
+	background: red;
+	position: relative;
+	
+	input[type="text"] {
+		display: block;
+	}
+}
+
+#wp-admin-bar {
+	display: none; // fixme // commented out for dev purposed
+}
+
+
+#footer {
+	margin: 0 0 20px 0;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	background: $mid-gray;
+	color: $dark-gray;
+	border-bottom: $dark-gray;
 }

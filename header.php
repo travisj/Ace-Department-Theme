@@ -48,7 +48,8 @@
 
 			<h1 id="logo"><a href="<?php echo site_url() ?>" title="<?php _e( 'Home', 'buddypress' ) ?>"><?php bp_site_name() ?></a></h1>
 
-			<ul id="nav">
+		<div id="nav">
+			<ul>
 				<li<?php if ( bp_is_front_page() ) : ?> class="selected"<?php endif; ?>>
 					<a href="<?php echo site_url() ?>" title="<?php _e( 'Home', 'buddypress' ) ?>"><?php _e( 'Home', 'buddypress' ) ?></a>
 				</li>
@@ -89,32 +90,76 @@
 				<?php wp_list_pages( 'title_li=&depth=1&exclude=' . bp_dtheme_page_on_front() ); ?>
 
 				<?php do_action( 'bp_nav_items' ); ?>
-			</ul><!-- #nav -->
 
-			<div id="search-bar">
-				<div class="padder">
+				<li>
+				<form action="<?php echo bp_search_form_action() ?>" method="post" id="search-form">
+					<input type="text" id="search-terms" name="search-terms" value="" />
+					<?php echo bp_search_form_type_select() ?>
 
-				<?php if ( bp_search_form_enabled() ) : ?>
+					<input type="submit" name="search-submit" id="search-submit" value="<?php _e( 'Search', 'buddypress' ) ?>" />
+					<?php wp_nonce_field( 'bp_search_form' ) ?>
+				</form><!-- #search-form -->
+				<li>
+			</ul>
 
-					<form action="<?php echo bp_search_form_action() ?>" method="post" id="search-form">
-						<input type="text" id="search-terms" name="search-terms" value="" />
-						<?php echo bp_search_form_type_select() ?>
+		</div><!-- #nav -->
 
-						<input type="submit" name="search-submit" id="search-submit" value="<?php _e( 'Search', 'buddypress' ) ?>" />
-						<?php wp_nonce_field( 'bp_search_form' ) ?>
-					</form><!-- #search-form -->
+		<div id="user-account">
 
+			<?php if ( is_user_logged_in() ) : ?>
+
+				<?php do_action( 'bp_before_sidebar_me' ) ?>
+
+				<div id="sidebar-me">
+					<a href="<?php echo bp_loggedin_user_domain() ?>" class="avatar">
+						<?php bp_loggedin_user_avatar( 'type=thumb&width=40&height=40' ) ?>
+					</a>
+					<a href="<?php echo bp_loggedin_user_domain() ?>" class="name">
+						<?php bp_loggedin_user_fullname() ?>
+					</a>
+
+
+					<?php do_action( 'bp_sidebar_me' ) ?>
+				</div>
+
+				<?php do_action( 'bp_after_sidebar_me' ) ?>
+
+				<?php if ( function_exists( 'bp_message_get_notices' ) ) : ?>
+					<?php bp_message_get_notices(); /* Site wide notices to all users */ ?>
 				<?php endif; ?>
 
-				<?php do_action( 'bp_search_login_bar' ) ?>
+			<?php else : ?>
 
-				</div><!-- .padder -->
-			</div><!-- #search-bar -->
+				<?php do_action( 'bp_before_sidebar_login_form' ) ?>
 
-			<?php do_action( 'bp_header' ) ?>
+				<form name="login-form" id="sidebar-login-form" class="standard-form" action="<?php echo site_url( 'wp-login.php', 'login_post' ) ?>" method="post">
+					<label><?php _e( 'Username', 'buddypress' ) ?></label>
+					<input type="text" name="log" id="sidebar-user-login" class="input" value="<?php echo esc_attr(stripslashes($user_login)); ?>" tabindex="97" />
+
+					<label><?php _e( 'Password', 'buddypress' ) ?></label>
+					<input type="password" name="pwd" id="sidebar-user-pass" class="input" value="" tabindex="98" />
+
+
+					<?php do_action( 'bp_sidebar_login_form' ) ?>
+					<input type="submit" name="wp-submit" id="sidebar-wp-submit" value="<?php _e('Log In'); ?>" tabindex="100" />
+					<input type="hidden" name="testcookie" value="1" />
+				</form>
+
+
+				<?php do_action( 'bp_after_sidebar_login_form' ) ?>
+
+			<?php endif; ?>
+		</div>
+
+		<?php if ( is_user_logged_in() ) : ?>
+			<a class="logout" href="<?php echo wp_logout_url( bp_get_root_domain() ) ?>" id="logout-link">
+				<?php _e( 'Log Out', 'buddypress' ) ?>
+			</a>
+		<?php endif; ?>
+
+		<?php do_action( 'bp_header' ) ?>
 
 		</div><!-- #header -->
-		<br class="clear" />
 
 		<?php do_action( 'bp_after_header' ) ?>
 		<?php do_action( 'bp_before_container' ) ?>

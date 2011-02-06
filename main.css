@@ -33,52 +33,144 @@ body {
     font-size: 48px; }
   body h3 {
     font-size: 36px; }
+  body h4 {
+    font-size: 24px; }
 
 #header {
   height: 150px;
-  background: #fff !important; }
+  background: #fff !important;
+  overflow: hidden;
+  margin: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
   #header h1#logo {
     position: relative;
     display: block;
-    background: transparent url(images/logo/header.png) left top no-repeat;
+    background: transparent url(images/logo/header-tagline.png) left top no-repeat;
     text-indent: -9999px !important;
-    height: 146px;
-    width: 214px;
+    height: 88px;
+    width: 343px;
     margin: 0;
-    left: 0;
-    top: -10px; }
+    left: 15px;
+    top: 25px;
+    position: absolute; }
     #header h1#logo a {
       position: absolute;
-      height: 146px;
-      width: 214px;
+      height: 88px;
+      width: 343px;
       left: 0;
-      top: 0; }
+      top: 0;
+      z-index: 3; }
   #header #nav {
     background: #fbfbb3;
-    position: relative;
+    position: absolute;
     width: 100%;
     overflow: hidden;
     right: 0;
-    max-width: 100%; }
-    #header #nav li {
-      margin: 0; }
-      #header #nav li a {
-        background: transparent;
-        color: #585858;
-        font-family: "league-gothic-1", "league-gothic-2", sans-serif;
-        font-size: 24px;
-        font-weight: bold;
-        font-weight: normal;
-        padding: 3px 25px 1px;
-        text-transform: lowercase; }
-        #header #nav li a:hover {
+    top: 130px;
+    max-width: 100%;
+    height: 45px;
+    margin: 0;
+    padding: 0; }
+    #header #nav ul {
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      list-style: none; }
+      #header #nav ul li {
+        float: left;
+        margin: 0; }
+        #header #nav ul li a {
+          display: block;
+          background: transparent;
+          color: #585858;
+          font-family: "league-gothic-1", "league-gothic-2", sans-serif;
+          font-size: 24px;
+          font-weight: bold;
+          font-weight: normal;
+          padding: 3px 25px 1px;
+          text-transform: lowercase; }
+          #header #nav ul li a:hover {
+            background: #fafa5c; }
+          #header #nav ul li a:focus {
+            outline: none; }
+        #header #nav ul li.selected a {
           background: #fafa5c; }
-      #header #nav li.selected a {
-        background: #fafa5c; }
+  #header #user-account {
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right;
+    padding: 10px; }
+    #header #user-account label {
+      float: left;
+      margin: 0 5px 0 0;
+      position: relative;
+      top: 2px;
+      color: #bdd3d0;
+      font-weight: normal;
+      font-family: "league-gothic-1", "league-gothic-2", sans-serif;
+      text-transform: uppercase;
+      font-size: 14px; }
+    #header #user-account input {
+      float: left; }
+    #header #user-account input[type="text"],
+    #header #user-account input[type="password"] {
+      padding: 3px 4px 0;
+      font-weight: normal;
+      font-size: 12px;
+      width: 10em;
+      margin: 0 10px 0 0; }
+    #header #user-account a.name,
+    #header #user-account a.avatar {
+      display: block;
+      float: right;
+      margin: 0 0 0 10px; }
+    #header #user-account a.name {
+      font-family: "league-gothic-1", "league-gothic-2", sans-serif;
+      color: #bdd3d0;
+      font-size: 24px; }
+      #header #user-account a.name:hover {
+        color: #fe9387; }
+  #header a#logout-link {
+    position: absolute;
+    color: #cdcdcd;
+    right: 10px;
+    top: 105px; }
+    #header a#logout-link:hover {
+      color: #fe9387; }
 
 #container {
-  margin: 0 0 20px 0;
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important; }
+  margin: 0;
+  border: 0 !important; }
+  #container, #container #content, #container #content .padder {
+    border-radius: 0 !important; }
+  #container .padder {
+    border: 0 !important; }
   #container ul.item-list li {
     border: 0; }
+  #container #sidebar {
+    background: transparent; }
+
+#search-bar {
+  z-index: 1; }
+
+#search-form {
+  display: none;
+  background: red;
+  position: relative; }
+  #search-form input[type="text"] {
+    display: block; }
+
+#wp-admin-bar {
+  display: none; }
+
+#footer {
+  margin: 0 0 20px 0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: #cdcdcd;
+  color: #585858;
+  border-bottom: #585858; }
