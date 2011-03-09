@@ -1,5 +1,6 @@
 // Definitions
 
+$white: #fff;
 $dark-gray: #585858;
 $mid-gray: #cdcdcd;
 $light-gray: #e7e7e7;
@@ -13,17 +14,21 @@ $dark-melon: #de6b5e;
 $blue: #3385ce;
 $light-blue: #1993ff;
 
+$font-size-small: 10px;
 $font-size-default: 12px;
 $font-size-h1: 60px;
 $font-size-h2: 48px;
 $font-size-h3: 36px;
 $font-size-h4: 24px;
 $font-size-h5: 14px;
+$font-size-h6: 12px;
 
 $serif: "Georgia", serif;
 $sans-serif: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$adage: "adage-script-1", "adage-script-2", sans-serif;
 $league-gothic: "league-gothic-1", "league-gothic-2", sans-serif;
-
+$raleway: "raleway-1", "raleway-2", sans-serif;
+$rosewood: "rosewood-std-1","rosewood-std-2",sans-serif;
 
 // Mixins
 
@@ -39,13 +44,23 @@ $league-gothic: "league-gothic-1", "league-gothic-2", sans-serif;
 	padding-bottom: $padding-bottom;
 }
 
-@mixin border-radius($radius) {
-	-webkit-border-radius: $radius;
-	-moz-border-radius: $radius;
-	-o-border-radius: $radius;
-	-ms-border-radius: $radius;
-	-khtml-border-radius: $radius;
-	border-radius: $radius;
+@mixin border-radius($radius, $important) {
+	@if $important {
+		-webkit-border-radius: $radius !important;
+		-moz-border-radius: $radius !important;
+		-o-border-radius: $radius !important;
+		-ms-border-radius: $radius !important;
+		-khtml-border-radius: $radius !important;
+		border-radius: $radius !important;
+	} @else {
+		-webkit-border-radius: $radius;
+		-moz-border-radius: $radius;
+		-o-border-radius: $radius;
+		-ms-border-radius: $radius;
+		-khtml-border-radius: $radius;
+		border-radius: $radius;
+
+	}
 }
 
 @mixin box-shadow($h, $v, $blur, $color, $inset: false) {
@@ -110,32 +125,69 @@ body {
 		}
 	}
 
-	h1, h2, h3 {
+	h1, h2, h3, h4, h5, h6 {
 		font-weight: normal;
-		font-family: $league-gothic;
 		color: $dark-teal;
 		margin: 0;
 	}
 
 	h1 {
 		font-size: $font-size-h1;
+		font-family: $adage;
 	}
 
 	h2 {
 		font-size: $font-size-h2;
+		font-family: $adage;
 	}
 
 	h3 {
 		font-size: $font-size-h3;
+		font-family: $league-gothic;
 	}
 
 	h4 {
 		font-size: $font-size-h4;
+		font-family: $league-gothic;
+	}
+
+	h5 {
+		font-size: $font-size-h5;
+		font-weight: bold;
+	}
+
+	h6 {
+		font-size: $font-size-h6;
+		font-weight: bold;
 	}
 
 
+	form.standard-form { 
+		textarea, 
+		input[type=text],
+		select, 
+		input[type=password] {
+			border: 1px inset #ccc;
+			//@include border-radius(3px);
+			padding: 3px 4px 0px;
+			font: inherit;
+			font-size: $font-size-default;
+			color: #888;
+		}
 
+		select {
+			padding: 3px;
+		}
+
+		input[type=password] {
+			margin-bottom: 5px;
+		}
+
+	}
 }
+
+
+// Header
 
 #header {
 	$header-height: 150px;
@@ -146,11 +198,11 @@ body {
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 
-	$logo-width: 343px;
+	$logo-width: 150px;
 	$logo-height: 88px;
 
 	h1#logo {
-		@include text-replace("logo/header-tagline.png", $logo-width, $logo-height);
+		@include text-replace("logo/header-small.png", $logo-width, $logo-height);
 		margin: 0;
 		left: 15px;
 		top: 25px;
@@ -159,12 +211,23 @@ body {
 		a {
 			position: absolute;
 			height: $logo-height;
-			width: $logo-width;
-			left: 0;
+			width: 450px;
+			left: 5px;
 			top: 0;
 			z-index: 3;
 		}
 
+	}
+
+	#tagline {
+		font-weight: normal;
+		//font-family: $adage;
+		position: relative;
+		left: 140px;
+		top: 50px;
+		color: $light-teal;
+		font-size: 16px;
+		font-family: $raleway;
 	}
 
 	#nav {
@@ -248,11 +311,16 @@ body {
 
 		input[type="text"],
 		input[type="password"] {
-			padding: 3px 4px 0;
+			padding: 2px 4px 0 !important;
 			font-weight: normal;
-			font-size: $font-size-default;
+			font-size: $font-size-small;
 			width: 10em;
 			margin: 0 10px 0 0 ;;
+		}
+
+		input#sidebar-wp-submit {
+			position: relative;
+			top: -3px;
 		}
 
 		a.name,
@@ -293,7 +361,8 @@ body {
 	border: 0 !important;
 
 	&, #content, #content .padder {
-		border-radius: 0 !important;
+		@include border-radius(0);
+		margin: 0;
 	}
 
 	.padder {
@@ -308,7 +377,7 @@ body {
 	}
 
 	#sidebar {
-		background: transparent;
+		display: none; // fixme // remove from templates
 	} // sidebar
 
 } // container 
@@ -332,11 +401,204 @@ body {
 }
 
 
+// Footer
+
+$footer-radius: 8px;
+
 #footer {
 	margin: 0 0 20px 0;
-	border-bottom-left-radius: 6px;
-	border-bottom-right-radius: 6px;
-	background: $mid-gray;
-	color: $dark-gray;
+	border-bottom-left-radius: $footer-radius;
+	border-bottom-right-radius: $footer-radius;
+	background: darken($dark-teal, 8) url(images/bg/gradient.png) left bottom repeat-x;
+	color: $light-gray;
 	border-bottom: $dark-gray;
+	text-align: left;
+	text-shadow: none;
+
+	h2 {
+		font-size: 28px;
+		font-weight: normal;
+		color: $pale-yellow;
+		margin: 0;
+		line-height: 1.1;
+		font-family: $league-gothic;
+		
+		span.ace {
+			text-transform: lowercase;
+		}
+
+		span.est {
+			color: #000;
+			display: none;
+
+		}
+	}
+
+	p {
+		margin: 0;
+		padding: 0;
+
+		a {
+			color: $melon;
+			text-decoration: none;
+			
+			&:hover {
+				color: $dark-melon;
+			}
+		}
+	
+		span {
+			color: $bright-yellow;
+		}
+	}
 }
+
+div.item-list-tabs {
+	background: $mid-gray;
+
+	a {
+		color: $dark-gray;
+		font-weight: bold;
+
+		&:hover {
+			color: #000;
+		}
+	}
+
+	li.selected {
+
+		a {
+			color: $dark-melon !important;
+			@include border-radius(0, true);
+		}
+
+	}
+}
+
+// Post
+
+div.post {
+	border-bottom: 1px dotted $mid-gray;
+
+	div.meta {
+		margin: 5px 0 0;
+		padding: 5px 0;
+		font-family: $serif;
+		font-style: italic;
+		color: $light-teal;
+
+		p {
+			margin: 0;
+		}
+
+		img.avatar {
+			border: 0;
+			float: left;
+			margin: 0 10px 0 0;
+			@include border-radius(4);
+		}
+
+		.comments {
+			float: none;
+		}
+
+		.author {
+			font-size: $font-size-h4;
+			font-family: $league-gothic;
+			font-style: normal;
+			margin: 3px 0 0 0;
+			line-height: 1;
+		}
+
+		.categorization {
+
+			span.separator {
+				color: $bright-yellow;
+				padding: 0 3px;
+			}
+		}
+
+		.tags {
+			float: none
+		}
+	}
+
+}
+
+div#comments {
+	h3 {
+		font-size: $font-size-h3 !important;
+	}
+
+	h4 {
+		font-size: $font-size-h4 !important;
+	}
+
+	ol.commentlist {
+		li {
+			border-bottom: 1px dotted $light-gray;
+			padding-bottom: 10px;
+			
+
+		}
+	}
+
+	div.comment-content {
+		margin-left: 60px;
+
+		div.comment-text {
+			float: left;
+			margin-left: 10px;
+			width: 680px;
+		}
+
+		div.comment-meta {
+			width: 150px;
+			float: left;
+			font-style: italic;
+			border: 0;
+			margin-top: 0;
+
+			.comment-author {
+				display: block;
+				font-family: $league-gothic;
+				font-size: $font-size-h4;
+				font-style: normal;
+				line-height: 1;
+			}
+
+			.comment-date, 
+			.comment-controls a {
+				color: $light-teal;
+
+				&:hover { color: $dark-melon; }
+			}
+			
+
+		}
+
+	}
+
+}
+
+div#respond {
+}
+
+div.comment-content {
+	margin-left: 75px;
+}
+
+div.comment-avatar-box {
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	width: 50px;
+
+	img.avatar {
+		padding: 0;
+		margin: 0;
+		border: 0
+	}
+}
+
+// */

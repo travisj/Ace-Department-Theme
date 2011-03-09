@@ -22,19 +22,41 @@ body {
     text-decoration: none; }
     body a:hover {
       color: #de6b5e; }
-  body h1, body h2, body h3 {
+  body h1, body h2, body h3, body h4, body h5, body h6 {
     font-weight: normal;
-    font-family: "league-gothic-1", "league-gothic-2", sans-serif;
     color: #6e8994;
     margin: 0; }
   body h1 {
-    font-size: 60px; }
+    font-size: 60px;
+    font-family: "adage-script-1", "adage-script-2", sans-serif; }
   body h2 {
-    font-size: 48px; }
+    font-size: 48px;
+    font-family: "adage-script-1", "adage-script-2", sans-serif; }
   body h3 {
-    font-size: 36px; }
+    font-size: 36px;
+    font-family: "league-gothic-1", "league-gothic-2", sans-serif; }
   body h4 {
-    font-size: 24px; }
+    font-size: 24px;
+    font-family: "league-gothic-1", "league-gothic-2", sans-serif; }
+  body h5 {
+    font-size: 14px;
+    font-weight: bold; }
+  body h6 {
+    font-size: 12px;
+    font-weight: bold; }
+  body form.standard-form textarea,
+  body form.standard-form input[type=text],
+  body form.standard-form select,
+  body form.standard-form input[type=password] {
+    border: 1px inset #ccc;
+    padding: 3px 4px 0px;
+    font: inherit;
+    font-size: 12px;
+    color: #888; }
+  body form.standard-form select {
+    padding: 3px; }
+  body form.standard-form input[type=password] {
+    margin-bottom: 5px; }
 
 #header {
   height: 150px;
@@ -46,10 +68,10 @@ body {
   #header h1#logo {
     position: relative;
     display: block;
-    background: transparent url(images/logo/header-tagline.png) left top no-repeat;
+    background: transparent url(images/logo/header-small.png) left top no-repeat;
     text-indent: -9999px !important;
     height: 88px;
-    width: 343px;
+    width: 150px;
     margin: 0;
     left: 15px;
     top: 25px;
@@ -57,10 +79,18 @@ body {
     #header h1#logo a {
       position: absolute;
       height: 88px;
-      width: 343px;
-      left: 0;
+      width: 450px;
+      left: 5px;
       top: 0;
       z-index: 3; }
+  #header #tagline {
+    font-weight: normal;
+    position: relative;
+    left: 140px;
+    top: 50px;
+    color: #bdd3d0;
+    font-size: 16px;
+    font-family: "raleway-1", "raleway-2", sans-serif; }
   #header #nav {
     background: #fbfbb3;
     position: absolute;
@@ -118,11 +148,14 @@ body {
       float: left; }
     #header #user-account input[type="text"],
     #header #user-account input[type="password"] {
-      padding: 3px 4px 0;
+      padding: 2px 4px 0 !important;
       font-weight: normal;
-      font-size: 12px;
+      font-size: 10px;
       width: 10em;
       margin: 0 10px 0 0; }
+    #header #user-account input#sidebar-wp-submit {
+      position: relative;
+      top: -3px; }
     #header #user-account a.name,
     #header #user-account a.avatar {
       display: block;
@@ -146,13 +179,19 @@ body {
   margin: 0;
   border: 0 !important; }
   #container, #container #content, #container #content .padder {
-    border-radius: 0 !important; }
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
+    -ms-border-radius: 0 !important;
+    -khtml-border-radius: 0 !important;
+    border-radius: 0 !important;
+    margin: 0; }
   #container .padder {
     border: 0 !important; }
   #container ul.item-list li {
     border: 0; }
   #container #sidebar {
-    background: transparent; }
+    display: none; }
 
 #search-bar {
   z-index: 1; }
@@ -169,8 +208,127 @@ body {
 
 #footer {
   margin: 0 0 20px 0;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  background: #cdcdcd;
-  color: #585858;
-  border-bottom: #585858; }
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: #5c737d url(images/bg/gradient.png) left bottom repeat-x;
+  color: #e7e7e7;
+  border-bottom: #585858;
+  text-align: left;
+  text-shadow: none; }
+  #footer h2 {
+    font-size: 28px;
+    font-weight: normal;
+    color: #fbfbb3;
+    margin: 0;
+    line-height: 1.1;
+    font-family: "league-gothic-1", "league-gothic-2", sans-serif; }
+    #footer h2 span.ace {
+      text-transform: lowercase; }
+    #footer h2 span.est {
+      color: #000;
+      display: none; }
+  #footer p {
+    margin: 0;
+    padding: 0; }
+    #footer p a {
+      color: #fe9387;
+      text-decoration: none; }
+      #footer p a:hover {
+        color: #de6b5e; }
+    #footer p span {
+      color: #fafa5c; }
+
+div.item-list-tabs {
+  background: #cdcdcd; }
+  div.item-list-tabs a {
+    color: #585858;
+    font-weight: bold; }
+    div.item-list-tabs a:hover {
+      color: #000; }
+  div.item-list-tabs li.selected a {
+    color: #de6b5e !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
+    -ms-border-radius: 0 !important;
+    -khtml-border-radius: 0 !important;
+    border-radius: 0 !important; }
+
+div.post {
+  border-bottom: 1px dotted #cdcdcd; }
+  div.post div.meta {
+    margin: 5px 0 0;
+    padding: 5px 0;
+    font-family: "Georgia", serif;
+    font-style: italic;
+    color: #bdd3d0; }
+    div.post div.meta p {
+      margin: 0; }
+    div.post div.meta img.avatar {
+      border: 0;
+      float: left;
+      margin: 0 10px 0 0;
+      -webkit-border-radius: 4 !important;
+      -moz-border-radius: 4 !important;
+      -o-border-radius: 4 !important;
+      -ms-border-radius: 4 !important;
+      -khtml-border-radius: 4 !important;
+      border-radius: 4 !important; }
+    div.post div.meta .comments {
+      float: none; }
+    div.post div.meta .author {
+      font-size: 24px;
+      font-family: "league-gothic-1", "league-gothic-2", sans-serif;
+      font-style: normal;
+      margin: 3px 0 0 0;
+      line-height: 1; }
+    div.post div.meta .categorization span.separator {
+      color: #fafa5c;
+      padding: 0 3px; }
+    div.post div.meta .tags {
+      float: none; }
+
+div#comments h3 {
+  font-size: 36px !important; }
+div#comments h4 {
+  font-size: 24px !important; }
+div#comments ol.commentlist li {
+  border-bottom: 1px dotted #e7e7e7;
+  padding-bottom: 10px; }
+div#comments div.comment-content {
+  margin-left: 60px; }
+  div#comments div.comment-content div.comment-text {
+    float: left;
+    margin-left: 10px;
+    width: 680px; }
+  div#comments div.comment-content div.comment-meta {
+    width: 150px;
+    float: left;
+    font-style: italic;
+    border: 0;
+    margin-top: 0; }
+    div#comments div.comment-content div.comment-meta .comment-author {
+      display: block;
+      font-family: "league-gothic-1", "league-gothic-2", sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      line-height: 1; }
+    div#comments div.comment-content div.comment-meta .comment-date,
+    div#comments div.comment-content div.comment-meta .comment-controls a {
+      color: #bdd3d0; }
+      div#comments div.comment-content div.comment-meta .comment-date:hover,
+      div#comments div.comment-content div.comment-meta .comment-controls a:hover {
+        color: #de6b5e; }
+
+div.comment-content {
+  margin-left: 75px; }
+
+div.comment-avatar-box {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  width: 50px; }
+  div.comment-avatar-box img.avatar {
+    padding: 0;
+    margin: 0;
+    border: 0; }

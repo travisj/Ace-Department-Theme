@@ -34,7 +34,7 @@
 		<?php wp_head(); ?>
 
 		<!-- typekit -->
-		<script type="text/javascript" src="http://use.typekit.com/jaf1izk.js"></script>
+		<script type="text/javascript" src="http://use.typekit.com/gxc4dpr.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		
 
@@ -47,6 +47,7 @@
 		<div id="header">
 
 			<h1 id="logo"><a href="<?php echo site_url() ?>" title="<?php _e( 'Home', 'buddypress' ) ?>"><?php bp_site_name() ?></a></h1>
+			<h4 id="tagline">the secret society of the entrepreneuse</h4>
 
 		<div id="nav">
 			<ul>
