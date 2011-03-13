@@ -54,10 +54,10 @@
 				<li<?php if ( bp_is_front_page() ) : ?> class="selected"<?php endif; ?>>
 					<a href="<?php echo site_url() ?>" title="<?php _e( 'Home', 'buddypress' ) ?>"><?php _e( 'Home', 'buddypress' ) ?></a>
 				</li>
-				<li>
+				<li <?php if ( $post->post_name === 'gazette' ) : ?> class="selected"<?php endif; ?>>
 					<a href="/gazette">Gazette</a>
 				</li>
-				<li>
+				<li <?php if ( $post->post_name === 'diversions' ) : ?> class="selected"<?php endif; ?>>
 					<a href="/diversions/">Diversions</a>
 				</li>
 
@@ -68,9 +68,11 @@
 						</li>
 					<?php endif; ?>
 				<?php endif; ?>
+				<?php if ( is_user_logged_in() ) : ?>
 				<li>
-					<a href="#">Inbox</a>
+					<a href="<?php echo bp_loggedin_user_domain() ?>/messages">Inbox</a>
 				</li>
+				<?php endif ?>
 				<li<?php if ( bp_is_page( BP_MEMBERS_SLUG ) || bp_is_member() ) : ?> class="selected"<?php endif; ?>>
 					<a href="<?php echo site_url() ?>/<?php echo BP_MEMBERS_SLUG ?>/" title="<?php _e( 'Members', 'buddypress' ) ?>"><?php _e( 'Members', 'buddypress' ) ?></a>
 				</li>
@@ -88,7 +90,9 @@
 					</li>
 				<?php endif; ?>
 
-				<?php wp_list_pages( 'title_li=&depth=1&exclude=' . bp_dtheme_page_on_front() ); ?>
+				<li <?php if ( $post->post_name === 'about' ) : ?> class="selected"<?php endif; ?>>
+					<a href="/about">About Ace</a>
+				</li>
 
 				<?php do_action( 'bp_nav_items' ); ?>
 
