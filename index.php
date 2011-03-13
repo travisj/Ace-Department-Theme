@@ -9,6 +9,7 @@
 
 		<div class="page" id="blog-latest">
 
+			<?php query_posts('cat=11&post_status=publish,future');?>
 			<?php if ( have_posts() ) : ?>
 
 				<?php while (have_posts()) : the_post(); ?>
