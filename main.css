@@ -264,16 +264,6 @@ div.post {
     color: #bdd3d0; }
     div.post div.meta p {
       margin: 0; }
-    div.post div.meta img.avatar {
-      border: 0;
-      float: left;
-      margin: 0 10px 0 0;
-      -webkit-border-radius: 4 !important;
-      -moz-border-radius: 4 !important;
-      -o-border-radius: 4 !important;
-      -ms-border-radius: 4 !important;
-      -khtml-border-radius: 4 !important;
-      border-radius: 4 !important; }
     div.post div.meta .comments {
       float: none; }
     div.post div.meta .author {
@@ -332,3 +322,64 @@ div.comment-avatar-box {
     padding: 0;
     margin: 0;
     border: 0; }
+
+.activity-list .activity-header a:first-child,
+.activity-list .activity-header span.highlight {
+  background: #EBF7FF;
+  background: transparent;
+  color: #fe9387;
+  padding: 0;
+  text-decoration: none;
+  border: 0;
+  margin-right: 3px;
+  font-family: "league-gothic-1", "league-gothic-2", sans-serif;
+  font-size: 24px; }
+.activity-list .activity-header a:first-child:hover {
+  color: #de6b5e !important;
+  background: transparent !important; }
+.activity-list .activity-content a:first-child:focus {
+  outline: none; }
+.activity-list .activity-content span.time-since {
+  color: #bbb; }
+
+body.activity div#item-header h3 {
+  line-height: 1; }
+body.activity div#item-header div#item-meta {
+  font-size: 12px !important;
+  margin: 10px 0; }
+  body.activity div#item-header div#item-meta div#latest-update a {
+    color: #6e8994;
+    font-family: "raleway-1", "raleway-2", sans-serif;
+    font-size: 24px; }
+    body.activity div#item-header div#item-meta div#latest-update a:hover {
+      color: #de6b5e; }
+body.activity div#item-header div.member-activity-status {
+  border-top: 1px dotted #e7e7e7;
+  border-bottom: 1px dotted #e7e7e7; }
+
+span.activity, div#message p {
+  display: inline-block;
+  font-size: 12px !important;
+  font-weight: normal;
+  background: transparent;
+  border-bottom: 1px solid #FFE8C4;
+  border-right: 1px solid #FFE8C4;
+  border: 0;
+  color: #bdd3d0;
+  padding: 0;
+  margin-top: 6px;
+  text-decoration: none;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px; }
+
+img.avatar {
+  border: 0;
+  float: left;
+  margin: 0 10px 0 0;
+  -webkit-border-radius: 4 !important;
+  -moz-border-radius: 4 !important;
+  -o-border-radius: 4 !important;
+  -ms-border-radius: 4 !important;
+  -khtml-border-radius: 4 !important;
+  border-radius: 4 !important; }

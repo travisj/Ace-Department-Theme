@@ -8,10 +8,13 @@
 
 <div id="item-header-content">
 
-	<h2 class="fn"><a href="<?php bp_displayed_user_link() ?>"><?php bp_displayed_user_fullname() ?></a> <span class="highlight">@<?php bp_displayed_user_username() ?> <span>?</span></span></h2>
-	<span class="activity"><?php bp_last_activity( bp_displayed_user_id() ) ?></span>
+	<h3>
+		<a href="<?php bp_displayed_user_link() ?>">
+			<?php bp_displayed_user_fullname() ?>
+		</a> 
+	</h3>
 
-	<?php do_action( 'bp_before_member_header_meta' ) ?>
+	<?php# do_action( 'bp_before_member_header_meta' ) ?>
 
 	<div id="item-meta">
 		<?php if ( function_exists( 'bp_activity_latest_update' ) ) : ?>
@@ -19,6 +22,13 @@
 				<?php bp_activity_latest_update( bp_displayed_user_id() ) ?>
 			</div>
 		<?php endif; ?>
+
+		<div class="member-activity-status">
+			<span class="name">
+				@<a href="<?php bp_displayed_user_link() ?>"><?php bp_displayed_user_username() ?></a>, 
+			</span>
+			<span class="activity"><?php bp_last_activity( bp_displayed_user_id() ) ?></span>
+		</div>
 
 		<div id="item-buttons">
 
