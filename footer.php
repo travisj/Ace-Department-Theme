@@ -19,6 +19,7 @@
 
 		<?php wp_footer(); ?>
 
+	</div><!-- /bodywrap -->
 	</body>
 
 </html>

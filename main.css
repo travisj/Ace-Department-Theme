@@ -17,6 +17,9 @@ body {
   color: #585858;
   background: transparent url(images/bg/body.png) left top repeat;
   line-height: 1.8; }
+  body div#body-wrap {
+    width: 940px;
+    margin: 0 auto; }
   body a {
     color: #fe9387;
     text-decoration: none; }
@@ -196,13 +199,6 @@ body {
 #search-bar {
   z-index: 1; }
 
-#search-form {
-  display: none;
-  background: red;
-  position: relative; }
-  #search-form input[type="text"] {
-    display: block; }
-
 #wp-admin-bar {
   display: none; }
 
@@ -283,7 +279,7 @@ div#comments h3 {
 div#comments h4 {
   font-size: 24px !important; }
 div#comments ol.commentlist li {
-  border-bottom: 1px dotted #e7e7e7;
+  border-bottom: 1px dotted #cdcdcd;
   padding-bottom: 10px; }
 div#comments div.comment-content {
   margin-left: 60px; }
@@ -354,8 +350,8 @@ body.activity div#item-header div#item-meta {
     body.activity div#item-header div#item-meta div#latest-update a:hover {
       color: #de6b5e; }
 body.activity div#item-header div.member-activity-status {
-  border-top: 1px dotted #e7e7e7;
-  border-bottom: 1px dotted #e7e7e7; }
+  border-top: 1px dotted #cdcdcd;
+  border-bottom: 1px dotted #cdcdcd; }
 
 span.activity, div#message p {
   display: inline-block;
@@ -383,3 +379,49 @@ img.avatar {
   -ms-border-radius: 4 !important;
   -khtml-border-radius: 4 !important;
   border-radius: 4 !important; }
+
+body.home-page div#content div.padder {
+  width: 560px;
+  float: left;
+  margin: 0; }
+body.home-page div#content div.home-sidebar {
+  width: 300px;
+  float: left;
+  margin: 20px 0 0 25px; }
+  body.home-page div#content div.home-sidebar div.sidebar-box h2 {
+    margin: 20px 0 5px 0;
+    line-height: 1; }
+  body.home-page div#content div.home-sidebar div.sidebar-box.search {
+    padding: 10px;
+    background: #cdcdcd;
+    -webkit-border-radius: 6px !important;
+    -moz-border-radius: 6px !important;
+    -o-border-radius: 6px !important;
+    -ms-border-radius: 6px !important;
+    -khtml-border-radius: 6px !important;
+    border-radius: 6px !important;
+    border-bottom: 1px solid #b3b3b3;
+    border-right: 1px solid silver; }
+  body.home-page div#content div.home-sidebar div.sidebar-box.twitter #twitter_update_list li {
+    margin: 0 0 5px 0;
+    padding: 0 0 5px 0;
+    border-bottom: 1px dotted #cdcdcd; }
+  body.home-page div#content div.home-sidebar div.sidebar-box.twitter #twitter_update_list span.twitter-content.first {
+    font-family: "raleway-1", "raleway-2", sans-serif;
+    font-size: 24px;
+    line-height: 1.2; }
+  body.home-page div#content div.home-sidebar div.sidebar-box.twitter #twitter_update_list a.twitter-status {
+    color: #6e8994;
+    padding-left: 5px; }
+    body.home-page div#content div.home-sidebar div.sidebar-box.twitter #twitter_update_list a.twitter-status:hover {
+      color: #de6b5e; }
+  body.home-page div#content div.home-sidebar div.sidebar-box.twitter #follow-us {
+    color: #6e8994;
+    font-family: "Georgia", serif;
+    font-style: italic;
+    border-bottom: 1px dotted #cdcdcd;
+    padding-bottom: 3px; }
+body.home-page div#content div.post h2 {
+  font-family: "rosewood-std-1", "rosewood-std-2", sans-serif; }
+  body.home-page div#content div.post h2 a {
+    color: #333333; }
