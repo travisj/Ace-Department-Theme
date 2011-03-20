@@ -9,7 +9,7 @@
 			</h2>
 
 			<p>
-				Follow @<a href="http://twitter.com/acedept">acedept</a> on Twitter, find us on <a href="http://facebook.com">Facebook</a>, or <a href="/contact">contact us</a>
+				Follow @<a href="http://twitter.com/acedept">acedept</a> on Twitter, find us on <a href="http://www.facebook.com/pages/Ace-Department/173136476045079">Facebook</a>, or <a href="/contact">contact us</a>
 			</p>
 
 			<?php do_action( 'bp_footer' ) ?>
