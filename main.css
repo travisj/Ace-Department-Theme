@@ -227,6 +227,8 @@ body {
     #footer h2 span.est {
       color: #000;
       display: none; }
+  #footer span.separator {
+    padding: 0 3px; }
   #footer p {
     margin: 0;
     padding: 0; }
