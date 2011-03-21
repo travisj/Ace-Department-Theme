@@ -256,6 +256,8 @@ div.item-list-tabs {
 
 div.post {
   border-bottom: 1px dotted #cdcdcd; }
+  div.post h2.posttitle {
+    margin-bottom: 15px; }
   div.post div.meta {
     margin: 5px 0 0;
     padding: 5px 0;

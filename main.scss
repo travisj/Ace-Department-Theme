@@ -492,6 +492,10 @@ div.item-list-tabs {
 div.post {
 	border-bottom: $border-default;
 
+	h2.posttitle {
+		margin-bottom: 15px;
+	}
+
 	div.meta {
 		margin: 5px 0 0;
 		padding: 5px 0;
