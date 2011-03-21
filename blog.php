@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-	<div id="content">
+	<div id="content" class="blog">
 		<div class="padder">
 
 		<?php do_action( 'bp_before_blog_home' ) ?>
@@ -39,6 +39,10 @@
 		<?php do_action( 'bp_after_blog_home' ) ?>
 
 		</div><!-- .padder -->
+		<div class="blog-sidebar">
+			sidebar here
+		</div>
+		<br class="clear" />
 	</div><!-- #content -->
 
 

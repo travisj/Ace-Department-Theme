@@ -4,7 +4,7 @@
 
 <?php get_header() ?>
 
-	<div id="content">
+	<div id="content" class="blog category">
 		<div class="padder">
 
 		<?php do_action( 'bp_before_blog_home' ) ?>
@@ -44,6 +44,8 @@
 		<?php do_action( 'bp_after_blog_home' ) ?>
 
 		</div><!-- .padder -->
+		<?php include "blog-sidebar.php" ?>
+
 	</div><!-- #content -->
 
 

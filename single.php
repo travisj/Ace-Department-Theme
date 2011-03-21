@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-	<div id="content">
+	<div id="content" class="blog single">
 		<div class="padder">
 
 		<?php do_action( 'bp_before_blog_single_post' ) ?>
@@ -31,6 +31,8 @@
 		<?php do_action( 'bp_after_blog_single_post' ) ?>
 
 		</div><!-- .padder -->
+
+		<?php include "blog-sidebar.php" ?>
 	</div><!-- #content -->
 
 	<?php locate_template( array( 'sidebar.php' ), true ) ?>

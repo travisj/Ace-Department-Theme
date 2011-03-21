@@ -32,6 +32,7 @@ $raleway: "raleway-1", "raleway-2", sans-serif;
 $rosewood: "rosewood-std-1","rosewood-std-2",sans-serif;
 
 $border-default: 1px dotted $mid-gray;
+$gray-diagonal: transparent url(images/bg/gray-diagonal.png) left top repeat;
 
 // Mixins
 
@@ -94,6 +95,11 @@ $border-default: 1px dotted $mid-gray;
 	
 }
 
+@mixin sidebar-border($color: $mid-gray) {
+	border-bottom: 1px solid darken($color, 10);
+	border-right: 1px solid darken($color, 5);
+}
+
 
 // Rules 
 
@@ -142,11 +148,13 @@ body {
 	h1 {
 		font-size: $font-size-h1;
 		font-family: $adage;
+		margin-bottom: 10px;
 	}
 
 	h2 {
 		font-size: $font-size-h2;
 		font-family: $adage;
+		margin-bottom: 10px;
 	}
 
 	h3 {
@@ -167,6 +175,10 @@ body {
 	h6 {
 		font-size: $font-size-h6;
 		font-weight: bold;
+	}
+
+	blockquote {
+		font-size: $font-size-default !important;
 	}
 
 
@@ -505,6 +517,8 @@ div.post {
 		}
 
 		.categorization {
+			line-height: 1.3;
+			margin-top: 0.2em;
 
 			span.separator {
 				color: $bright-yellow;
@@ -711,10 +725,9 @@ body.home-page {
 
 				&.search {
 					padding: 10px;
-					background: $mid-gray;
+					background: $gray-diagonal;
 					@include border-radius(6px);
-					border-bottom: 1px solid darken($mid-gray, 10);
-					border-right: 1px solid darken($mid-gray, 5);
+					@include sidebar-border();
 	
 				}
 
@@ -762,6 +775,55 @@ body.home-page {
 
 				}
 			}
+		}
+	}
+}
+
+// Blog 
+
+div#content.blog {
+	div.padder {
+		width: 560px;
+		float: left;
+		margin: 0;
+	}
+
+	div.blog-sidebar {
+		$padding: 10px;
+		width: 300px - $padding*2 ;
+		float: left;
+		margin: 20px 0 0 25px;
+		@include border-radius(5px);
+		@include sidebar-border();
+		background: $gray-diagonal; 
+		padding: $padding;
+
+		h4 {
+			color: $dark-teal;
+			font-size: 16px;
+			font-family: $raleway;
+		}
+	}
+}
+
+div.linkwithin_div {
+	.linkwithin_text,
+	#linkwithin_logo_0 {
+		display: none !important;
+	}
+
+	
+	ul {
+		margin: 0 !important;
+		padding: 0 !important;
+
+		li {
+			list-style: none !important;
+			margin: 5px 0 !important;
+			background: #fff !important;
+			padding: 8px !important;
+			@include sidebar-border();
+			@include border-radius(3px, important);
 		}
 	}
 }
