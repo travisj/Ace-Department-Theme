@@ -11,7 +11,14 @@
 
 		<div class="page" id="blog-latest">
 
-			<?php query_posts('category_name='.get_permalink().'&post_status=publish,future');?>
+			<?php 
+				global $query_string;
+				parse_str($query_string, $qs);
+				if (!isset($qs['paged'])) {
+					$qs['paged'] = 1;
+				}
+				query_posts('paged=' . $qs['paged'] . '&category_name='.get_permalink().'&post_status=publish,future');
+			?>
 			<?php if ( have_posts() ) : ?>
 
 				<?php while (have_posts()) : the_post(); ?>
