@@ -108,6 +108,25 @@ $gray-diagonal: transparent url(images/bg/gray-diagonal.png) left top repeat;
 	@include sidebar-border();
 }
 
+@mixin clearfix() {
+	&:after { 
+		content: " "; 
+		display: block; 
+		height: 0; 
+		clear: both; 
+		visibility: hidden;
+	}
+}
+
+@mixin img-replace($width, $height, $img) {
+	display: block;
+	position: relative;
+	height: $height;
+	width: $width;
+	background: transparent url($img) left top no-repeat;
+	text-indent: -9999px !important;
+}
+
 
 // Rules 
 
@@ -572,8 +591,6 @@ div#comments {
 
 		div.comment-text {
 			float: left;
-			margin-left: 10px;
-			width: 680px;
 		}
 
 		div.comment-meta {
@@ -750,24 +767,67 @@ div.sidebar {
 	margin: 20px 0 0 25px;
 
 	div.sidebar-box {
+		margin: 0 0 10px 0;
+
 		h2 {
 			margin: 20px 0 5px 0;
 			line-height: 1;
 		}
 
+		h4 {
+			color: $dark-teal;
+			font-size: 16px;
+			font-family: $raleway;
+		}
+
 		&.search {
 			@include callout-box-style;
+		}
 
+		&.active-members {
+			@include callout-box-style;
+		}
+
+		&.ask-ace {
+			@include clearfix;
+			padding: 10px 0;
+
+			a {
+				@include img-replace(143px, 134px, "images/links/askace-yellow.gif");
+			}
+		}
+
+		&.contact {
+			@include clearfix;
+
+			a {
+				float: left;
+				margin: 0 8px 0 0;
+
+				&.twitter {
+					@include img-replace(70px, 27px, "images/links/twitter.gif");
+				}
+
+				&.facebook {
+					@include img-replace(85px, 27px, "images/links/facebook.gif");
+				}
+
+
+				&.rss {
+					@include img-replace(43px, 27px, "images/links/rss.gif");
+				}
+
+				&.contact {
+					@include img-replace(73px, 27px, "images/links/contact.gif");
+					margin-right: 0;
+				}
+
+			}
 		}
 
 		&.also-like {
 			@include callout-box-style;
 	
-			h4 {
-				color: $dark-teal;
-				font-size: 16px;
-				font-family: $raleway;
-			}
 		}
 
 		&.twitter {
@@ -818,13 +878,8 @@ div#content.blog {
 
 div.linkwithin_div {
 
-	&:after { // clearfix
-		 content: " "; 
-		 display: block; 
-		 height: 0; 
-		 clear: both; 
-		 visibility: hidden;
-	 }
+
+	@include clearfix;
 
 
 

@@ -295,9 +295,7 @@ div#comments ol.commentlist li {
 div#comments div.comment-content {
   margin-left: 60px; }
   div#comments div.comment-content div.comment-text {
-    float: left;
-    margin-left: 10px;
-    width: 680px; }
+    float: left; }
   div#comments div.comment-content div.comment-meta {
     width: 150px;
     float: left;
@@ -404,56 +402,123 @@ div.sidebar {
   width: 300px;
   float: left;
   margin: 20px 0 0 25px; }
-  div.sidebar div.sidebar-box h2 {
-    margin: 20px 0 5px 0;
-    line-height: 1; }
-  div.sidebar div.sidebar-box.search {
-    padding: 10px;
-    margin: 0 0 10px 0;
-    background: transparent url(images/bg/gray-diagonal.png) left top repeat;
-    -webkit-border-radius: 6px !important;
-    -moz-border-radius: 6px !important;
-    -o-border-radius: 6px !important;
-    -ms-border-radius: 6px !important;
-    -khtml-border-radius: 6px !important;
-    border-radius: 6px !important;
-    border-bottom: 1px solid #b3b3b3;
-    border-right: 1px solid silver; }
-  div.sidebar div.sidebar-box.also-like {
-    padding: 10px;
-    margin: 0 0 10px 0;
-    background: transparent url(images/bg/gray-diagonal.png) left top repeat;
-    -webkit-border-radius: 6px !important;
-    -moz-border-radius: 6px !important;
-    -o-border-radius: 6px !important;
-    -ms-border-radius: 6px !important;
-    -khtml-border-radius: 6px !important;
-    border-radius: 6px !important;
-    border-bottom: 1px solid #b3b3b3;
-    border-right: 1px solid silver; }
-    div.sidebar div.sidebar-box.also-like h4 {
+  div.sidebar div.sidebar-box {
+    margin: 0 0 10px 0; }
+    div.sidebar div.sidebar-box h2 {
+      margin: 20px 0 5px 0;
+      line-height: 1; }
+    div.sidebar div.sidebar-box h4 {
       color: #6e8994;
       font-size: 16px;
       font-family: "raleway-1", "raleway-2", sans-serif; }
-  div.sidebar div.sidebar-box.twitter #twitter_update_list li {
-    margin: 0 0 5px 0;
-    padding: 0 0 5px 0;
-    border-bottom: 1px dotted #cdcdcd; }
-  div.sidebar div.sidebar-box.twitter #twitter_update_list span.twitter-content.first {
-    font-family: "raleway-1", "raleway-2", sans-serif;
-    font-size: 24px;
-    line-height: 1.2; }
-  div.sidebar div.sidebar-box.twitter #twitter_update_list a.twitter-status {
-    color: #6e8994;
-    padding-left: 5px; }
-    div.sidebar div.sidebar-box.twitter #twitter_update_list a.twitter-status:hover {
-      color: #de6b5e; }
-  div.sidebar div.sidebar-box.twitter #follow-us {
-    color: #6e8994;
-    font-family: "Georgia", serif;
-    font-style: italic;
-    border-bottom: 1px dotted #cdcdcd;
-    padding-bottom: 3px; }
+    div.sidebar div.sidebar-box.search {
+      padding: 10px;
+      margin: 0 0 10px 0;
+      background: transparent url(images/bg/gray-diagonal.png) left top repeat;
+      -webkit-border-radius: 6px !important;
+      -moz-border-radius: 6px !important;
+      -o-border-radius: 6px !important;
+      -ms-border-radius: 6px !important;
+      -khtml-border-radius: 6px !important;
+      border-radius: 6px !important;
+      border-bottom: 1px solid #b3b3b3;
+      border-right: 1px solid silver; }
+    div.sidebar div.sidebar-box.active-members {
+      padding: 10px;
+      margin: 0 0 10px 0;
+      background: transparent url(images/bg/gray-diagonal.png) left top repeat;
+      -webkit-border-radius: 6px !important;
+      -moz-border-radius: 6px !important;
+      -o-border-radius: 6px !important;
+      -ms-border-radius: 6px !important;
+      -khtml-border-radius: 6px !important;
+      border-radius: 6px !important;
+      border-bottom: 1px solid #b3b3b3;
+      border-right: 1px solid silver; }
+    div.sidebar div.sidebar-box.ask-ace {
+      padding: 10px 0; }
+      div.sidebar div.sidebar-box.ask-ace:after {
+        content: " ";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+      div.sidebar div.sidebar-box.ask-ace a {
+        display: block;
+        position: relative;
+        height: 134px;
+        width: 143px;
+        background: transparent url("images/links/askace-yellow.gif") left top no-repeat;
+        text-indent: -9999px !important; }
+    div.sidebar div.sidebar-box.contact:after {
+      content: " ";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    div.sidebar div.sidebar-box.contact a {
+      float: left;
+      margin: 0 8px 0 0; }
+      div.sidebar div.sidebar-box.contact a.twitter {
+        display: block;
+        position: relative;
+        height: 27px;
+        width: 70px;
+        background: transparent url("images/links/twitter.gif") left top no-repeat;
+        text-indent: -9999px !important; }
+      div.sidebar div.sidebar-box.contact a.facebook {
+        display: block;
+        position: relative;
+        height: 27px;
+        width: 85px;
+        background: transparent url("images/links/facebook.gif") left top no-repeat;
+        text-indent: -9999px !important; }
+      div.sidebar div.sidebar-box.contact a.rss {
+        display: block;
+        position: relative;
+        height: 27px;
+        width: 43px;
+        background: transparent url("images/links/rss.gif") left top no-repeat;
+        text-indent: -9999px !important; }
+      div.sidebar div.sidebar-box.contact a.contact {
+        display: block;
+        position: relative;
+        height: 27px;
+        width: 73px;
+        background: transparent url("images/links/contact.gif") left top no-repeat;
+        text-indent: -9999px !important;
+        margin-right: 0; }
+    div.sidebar div.sidebar-box.also-like {
+      padding: 10px;
+      margin: 0 0 10px 0;
+      background: transparent url(images/bg/gray-diagonal.png) left top repeat;
+      -webkit-border-radius: 6px !important;
+      -moz-border-radius: 6px !important;
+      -o-border-radius: 6px !important;
+      -ms-border-radius: 6px !important;
+      -khtml-border-radius: 6px !important;
+      border-radius: 6px !important;
+      border-bottom: 1px solid #b3b3b3;
+      border-right: 1px solid silver; }
+    div.sidebar div.sidebar-box.twitter #twitter_update_list li {
+      margin: 0 0 5px 0;
+      padding: 0 0 5px 0;
+      border-bottom: 1px dotted #cdcdcd; }
+    div.sidebar div.sidebar-box.twitter #twitter_update_list span.twitter-content.first {
+      font-family: "raleway-1", "raleway-2", sans-serif;
+      font-size: 24px;
+      line-height: 1.2; }
+    div.sidebar div.sidebar-box.twitter #twitter_update_list a.twitter-status {
+      color: #6e8994;
+      padding-left: 5px; }
+      div.sidebar div.sidebar-box.twitter #twitter_update_list a.twitter-status:hover {
+        color: #de6b5e; }
+    div.sidebar div.sidebar-box.twitter #follow-us {
+      color: #6e8994;
+      font-family: "Georgia", serif;
+      font-style: italic;
+      border-bottom: 1px dotted #cdcdcd;
+      padding-bottom: 3px; }
 
 div#content.blog div.padder {
   width: 560px;
