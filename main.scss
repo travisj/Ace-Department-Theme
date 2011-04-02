@@ -100,6 +100,14 @@ $gray-diagonal: transparent url(images/bg/gray-diagonal.png) left top repeat;
 	border-right: 1px solid darken($color, 5);
 }
 
+@mixin callout-box-style() {
+	padding: 10px;
+	margin: 0 0 10px 0;
+	background: $gray-diagonal;
+	@include border-radius(6px);
+	@include sidebar-border();
+}
+
 
 // Rules 
 
@@ -720,59 +728,6 @@ body.home-page {
 			margin: 0;
 		}
 
-		div.home-sidebar {
-			width: 300px ;
-			float: left;
-			margin: 20px 0 0 25px;
-
-			div.sidebar-box {
-				h2 {
-					margin: 20px 0 5px 0;
-					line-height: 1;
-				}
-
-				&.search {
-					padding: 10px;
-					background: $gray-diagonal;
-					@include border-radius(6px);
-					@include sidebar-border();
-	
-				}
-
-				&.twitter {
-
-					#twitter_update_list {
-						li {
-							margin: 0 0 5px 0;
-							padding: 0 0 5px 0;
-							border-bottom: $border-default;
-						}
-
-						span.twitter-content.first {
-							font-family: $raleway;
-							font-size: $font-size-h4;
-							line-height: 1.2;
-
-						}
-
-						a.twitter-status {
-							color: $dark-teal;
-							padding-left: 5px;
-
-							&:hover { color: $dark-melon; }
-						}
-					}
-
-					#follow-us {
-						color: $dark-teal;
-						font-family: $serif;
-						font-style: italic;
-						border-bottom: $border-default;
-						padding-bottom: 3px;
-					}
-				}
-			}
-		}
 
 		div.post {
 			h2 {
@@ -787,6 +742,69 @@ body.home-page {
 	}
 }
 
+// Sidebar 
+
+div.sidebar {
+	width: 300px ;
+	float: left;
+	margin: 20px 0 0 25px;
+
+	div.sidebar-box {
+		h2 {
+			margin: 20px 0 5px 0;
+			line-height: 1;
+		}
+
+		&.search {
+			@include callout-box-style;
+
+		}
+
+		&.also-like {
+			@include callout-box-style;
+	
+			h4 {
+				color: $dark-teal;
+				font-size: 16px;
+				font-family: $raleway;
+			}
+		}
+
+		&.twitter {
+
+			#twitter_update_list {
+				li {
+					margin: 0 0 5px 0;
+					padding: 0 0 5px 0;
+					border-bottom: $border-default;
+				}
+
+				span.twitter-content.first {
+					font-family: $raleway;
+					font-size: $font-size-h4;
+					line-height: 1.2;
+
+			}
+
+				a.twitter-status {
+					color: $dark-teal;
+					padding-left: 5px;
+
+					&:hover { color: $dark-melon; }
+				}
+			}
+
+			#follow-us {
+				color: $dark-teal;
+				font-family: $serif;
+				font-style: italic;
+				border-bottom: $border-default;
+				padding-bottom: 3px;
+			}
+		}
+	}
+}
+
 // Blog 
 
 div#content.blog {
@@ -796,30 +814,58 @@ div#content.blog {
 		margin: 0;
 	}
 
-	div.blog-sidebar {
-		$padding: 10px;
-		width: 300px - $padding*2 ;
-		float: left;
-		margin: 20px 0 0 25px;
-		@include border-radius(5px);
-		@include sidebar-border();
-		background: $gray-diagonal; 
-		padding: $padding;
-
-		h4 {
-			color: $dark-teal;
-			font-size: 16px;
-			font-family: $raleway;
-		}
-	}
 }
 
 div.linkwithin_div {
+
+	&:after { // clearfix
+		 content: " "; 
+		 display: block; 
+		 height: 0; 
+		 clear: both; 
+		 visibility: hidden;
+	 }
+
+
+
 	.linkwithin_text,
+	#linkwithin_logolink_0,
 	#linkwithin_logo_0 {
-		display: none !important;
+		&, & * {
+			display: none !important;
+		}
 	}
 
+	.linkwithin_posts {
+		a {
+			display: block;
+			clear: both;
+			border: 0 !important;
+
+			& > div {
+				width: 100% !important;
+				margin: 0 !important;
+				margin-bottom: -60px !important;
+				padding: 0 !important;
+			}
+			
+
+			.linkwithin_img_0 {
+				display: block;
+				float: left;
+			}
+
+			.linkwithin_title {
+				float: left;
+				display: block;
+				width: 150px;;
+				position: relative;
+				padding-left: 10px !important;
+			}
+		}
+	}
+
+/*
 	
 	ul {
 		margin: 0 !important;
@@ -834,4 +880,5 @@ div.linkwithin_div {
 			@include border-radius(3px, important);
 		}
 	}
+*/
 }

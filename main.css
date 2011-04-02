@@ -395,15 +395,21 @@ body.home-page div#content div.padder {
   width: 560px;
   float: left;
   margin: 0; }
-body.home-page div#content div.home-sidebar {
+body.home-page div#content div.post h2 {
+  font-family: "rosewood-std-1", "rosewood-std-2", sans-serif; }
+  body.home-page div#content div.post h2 a {
+    color: #333333; }
+
+div.sidebar {
   width: 300px;
   float: left;
   margin: 20px 0 0 25px; }
-  body.home-page div#content div.home-sidebar div.sidebar-box h2 {
+  div.sidebar div.sidebar-box h2 {
     margin: 20px 0 5px 0;
     line-height: 1; }
-  body.home-page div#content div.home-sidebar div.sidebar-box.search {
+  div.sidebar div.sidebar-box.search {
     padding: 10px;
+    margin: 0 0 10px 0;
     background: transparent url(images/bg/gray-diagonal.png) left top repeat;
     -webkit-border-radius: 6px !important;
     -moz-border-radius: 6px !important;
@@ -413,69 +419,91 @@ body.home-page div#content div.home-sidebar {
     border-radius: 6px !important;
     border-bottom: 1px solid #b3b3b3;
     border-right: 1px solid silver; }
-  body.home-page div#content div.home-sidebar div.sidebar-box.twitter #twitter_update_list li {
+  div.sidebar div.sidebar-box.also-like {
+    padding: 10px;
+    margin: 0 0 10px 0;
+    background: transparent url(images/bg/gray-diagonal.png) left top repeat;
+    -webkit-border-radius: 6px !important;
+    -moz-border-radius: 6px !important;
+    -o-border-radius: 6px !important;
+    -ms-border-radius: 6px !important;
+    -khtml-border-radius: 6px !important;
+    border-radius: 6px !important;
+    border-bottom: 1px solid #b3b3b3;
+    border-right: 1px solid silver; }
+    div.sidebar div.sidebar-box.also-like h4 {
+      color: #6e8994;
+      font-size: 16px;
+      font-family: "raleway-1", "raleway-2", sans-serif; }
+  div.sidebar div.sidebar-box.twitter #twitter_update_list li {
     margin: 0 0 5px 0;
     padding: 0 0 5px 0;
     border-bottom: 1px dotted #cdcdcd; }
-  body.home-page div#content div.home-sidebar div.sidebar-box.twitter #twitter_update_list span.twitter-content.first {
+  div.sidebar div.sidebar-box.twitter #twitter_update_list span.twitter-content.first {
     font-family: "raleway-1", "raleway-2", sans-serif;
     font-size: 24px;
     line-height: 1.2; }
-  body.home-page div#content div.home-sidebar div.sidebar-box.twitter #twitter_update_list a.twitter-status {
+  div.sidebar div.sidebar-box.twitter #twitter_update_list a.twitter-status {
     color: #6e8994;
     padding-left: 5px; }
-    body.home-page div#content div.home-sidebar div.sidebar-box.twitter #twitter_update_list a.twitter-status:hover {
+    div.sidebar div.sidebar-box.twitter #twitter_update_list a.twitter-status:hover {
       color: #de6b5e; }
-  body.home-page div#content div.home-sidebar div.sidebar-box.twitter #follow-us {
+  div.sidebar div.sidebar-box.twitter #follow-us {
     color: #6e8994;
     font-family: "Georgia", serif;
     font-style: italic;
     border-bottom: 1px dotted #cdcdcd;
     padding-bottom: 3px; }
-body.home-page div#content div.post h2 {
-  font-family: "rosewood-std-1", "rosewood-std-2", sans-serif; }
-  body.home-page div#content div.post h2 a {
-    color: #333333; }
 
 div#content.blog div.padder {
   width: 560px;
   float: left;
   margin: 0; }
-div#content.blog div.blog-sidebar {
-  width: 280px;
-  float: left;
-  margin: 20px 0 0 25px;
-  -webkit-border-radius: 5px !important;
-  -moz-border-radius: 5px !important;
-  -o-border-radius: 5px !important;
-  -ms-border-radius: 5px !important;
-  -khtml-border-radius: 5px !important;
-  border-radius: 5px !important;
-  border-bottom: 1px solid #b3b3b3;
-  border-right: 1px solid silver;
-  background: transparent url(images/bg/gray-diagonal.png) left top repeat;
-  padding: 10px; }
-  div#content.blog div.blog-sidebar h4 {
-    color: #6e8994;
-    font-size: 16px;
-    font-family: "raleway-1", "raleway-2", sans-serif; }
 
-div.linkwithin_div .linkwithin_text,
-div.linkwithin_div #linkwithin_logo_0 {
-  display: none !important; }
-div.linkwithin_div ul {
-  margin: 0 !important;
-  padding: 0 !important; }
-  div.linkwithin_div ul li {
-    list-style: none !important;
-    margin: 5px 0 !important;
-    background: #fff !important;
-    padding: 8px !important;
-    border-bottom: 1px solid #b3b3b3;
-    border-right: 1px solid silver;
-    -webkit-border-radius: 3px !important;
-    -moz-border-radius: 3px !important;
-    -o-border-radius: 3px !important;
-    -ms-border-radius: 3px !important;
-    -khtml-border-radius: 3px !important;
-    border-radius: 3px !important; }
+div.linkwithin_div {
+  /*
+  	
+  	ul {
+  		margin: 0 !important;
+  		padding: 0 !important;
+  
+  		li {
+  			list-style: none !important;
+  			margin: 5px 0 !important;
+  			background: #fff !important;
+  			padding: 8px !important;
+  			@include sidebar-border();
+  			@include border-radius(3px, important);
+  		}
+  	}
+  */ }
+  div.linkwithin_div:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  div.linkwithin_div .linkwithin_text, div.linkwithin_div .linkwithin_text *,
+  div.linkwithin_div #linkwithin_logolink_0,
+  div.linkwithin_div #linkwithin_logolink_0 *,
+  div.linkwithin_div #linkwithin_logo_0,
+  div.linkwithin_div #linkwithin_logo_0 * {
+    display: none !important; }
+  div.linkwithin_div .linkwithin_posts a {
+    display: block;
+    clear: both;
+    border: 0 !important; }
+    div.linkwithin_div .linkwithin_posts a > div {
+      width: 100% !important;
+      margin: 0 !important;
+      margin-bottom: -60px !important;
+      padding: 0 !important; }
+    div.linkwithin_div .linkwithin_posts a .linkwithin_img_0 {
+      display: block;
+      float: left; }
+    div.linkwithin_div .linkwithin_posts a .linkwithin_title {
+      float: left;
+      display: block;
+      width: 150px;
+      position: relative;
+      padding-left: 10px !important; }

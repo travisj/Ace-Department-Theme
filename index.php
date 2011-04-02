@@ -72,15 +72,10 @@
 
 		</div><!-- .padder -->
 
-		<div class="home-sidebar">
-			<div class="sidebar-box search">
-				<form action="<?php echo bp_search_form_action() ?>" method="post" id="search-form">
-					<input type="text" id="search-terms" name="search-terms" value="" />
-					<?php echo bp_search_form_type_select() ?>
+		<div class="home sidebar">
 
-					<input type="submit" name="search-submit" id="search-submit" value="<?php _e( 'Search', 'buddypress' ) ?>" />
-					<?php wp_nonce_field( 'bp_search_form' ) ?>
-				</form><!-- #search-form -->
+			<div class="sidebar-box search">
+				<?php include "search-form.php"; ?>
 			</div>
 			<div class="sidebar-box about">
 				<h2>welcome</h2>
