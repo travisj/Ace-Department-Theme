@@ -424,17 +424,26 @@ div.sidebar {
       border-bottom: 1px solid #b3b3b3;
       border-right: 1px solid silver; }
     div.sidebar div.sidebar-box.active-members {
-      padding: 10px;
-      margin: 0 0 10px 0;
-      background: transparent url(images/bg/gray-diagonal.png) left top repeat;
-      -webkit-border-radius: 6px !important;
-      -moz-border-radius: 6px !important;
-      -o-border-radius: 6px !important;
-      -ms-border-radius: 6px !important;
-      -khtml-border-radius: 6px !important;
-      border-radius: 6px !important;
-      border-bottom: 1px solid #b3b3b3;
-      border-right: 1px solid silver; }
+      margin-top: 20px; }
+      div.sidebar div.sidebar-box.active-members ul#hts_displaymembers li {
+        clear: both;
+        border-bottom: 1px dotted #cdcdcd;
+        padding-bottom: 10px;
+        margin-bottom: 10px; }
+        div.sidebar div.sidebar-box.active-members ul#hts_displaymembers li img {
+          float: left; }
+        div.sidebar div.sidebar-box.active-members ul#hts_displaymembers li h2 {
+          font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+          font-size: 12px;
+          font-weight: bold;
+          margin: 3px 0; }
+        div.sidebar div.sidebar-box.active-members ul#hts_displaymembers li span.lastactive {
+          display: block;
+          float: left;
+          color: #6e8994;
+          font-size: 10px; }
+          div.sidebar div.sidebar-box.active-members ul#hts_displaymembers li span.lastactive img {
+            display: none; }
     div.sidebar div.sidebar-box.ask-ace {
       padding: 10px 0; }
       div.sidebar div.sidebar-box.ask-ace:after {

@@ -13,7 +13,7 @@
 
 	<div class="sidebar-box active-members">
 		<h4>Active Members</h4>
-		plugin content goes here
+		<?php echo do_shortcode('[hts-displaymembers count="10" field="display_name"]'); ?>
 	</div>
 
 	<div class="sidebar-box ask-ace">

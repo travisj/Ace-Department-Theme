@@ -785,7 +785,38 @@ div.sidebar {
 		}
 
 		&.active-members {
-			@include callout-box-style;
+			margin-top: 20px;
+
+
+			ul#hts_displaymembers {
+				li {
+					clear: both;
+					border-bottom: $border-default;
+					padding-bottom: 10px;
+					margin-bottom: 10px;
+
+
+					img {
+						float: left;
+					}
+
+					h2 {
+						font-family: $sans-serif;
+						font-size: $font-size-default;
+						font-weight: bold;
+						margin: 3px 0;
+					}
+
+					span.lastactive {
+						display: block;
+						float: left;
+						color: $dark-teal;
+						font-size: $font-size-small;
+
+						img { display: none; }
+					}
+				}
+			}
 		}
 
 		&.ask-ace {
