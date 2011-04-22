@@ -5,9 +5,11 @@
 	</h2>
 
 	<div class="entry">
+		<?php echo $more; ?>
+		<?php echo $testme; ?>
 		<?php the_content( __( 'Read the entire post...', 'buddypress' ) ); ?>
 
-		<?php# wp_link_pages(array('before' => __( '<p><strong>Pages:</strong> ', 'buddypress' ), 'after' => '</p>', 'next_or_number' => 'number')); ?>
+
 	</div> <!-- /entry -->
 
 	

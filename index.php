@@ -1,4 +1,5 @@
 <?php get_header() ?>
+<?php global $more; $more = 0; ?>
 
 	<div id="content">
 		<div class="padder">

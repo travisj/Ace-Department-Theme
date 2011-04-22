@@ -284,6 +284,8 @@ div.post {
         padding: 0 3px; }
     div.post div.meta .tags {
       float: none; }
+    div.post div.meta div.really_simple_share {
+      padding-top: 4px !important; }
 
 div#comments h3 {
   font-size: 36px !important; }

@@ -16,6 +16,9 @@
 
 				</div>
 
+				<?php global $more; global $testme; ?>
+				<?php $more = 0; $testme = "testme" ?>
+
 				<?php include "post.php" ?>
 
 			<?php comments_template(); ?>
