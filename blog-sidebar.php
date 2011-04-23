@@ -7,7 +7,7 @@
 	<div class="sidebar-box contact">
 		<a href="http://twitter.com/acedept" class="twitter">Twitter</a>
 		<a href="http://www.facebook.com/pages/Ace-Department/173136476045079" class="facebook">Facebook</a>
-		<a href="http://www.acedepartment.com/activity/feed/" class="rss">RSS</a>
+		<a href="http://www.acedepartment.com/feed/" class="rss">RSS</a>
 		<a href="/contact" class="contact">Contact</a>
 	</div>
 

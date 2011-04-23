@@ -14,7 +14,7 @@
 					<?php do_action( 'bp_before_blog_post' ) ?>
 
 					<?php global $more; global $testme; ?>
-					<?php $more = 1; $testme = "testme" ?>
+					<?php $more = 0; $testme = "testme" ?>
 
 					<?php include "post.php" ?>
 

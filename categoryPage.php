@@ -10,6 +10,7 @@
 		<?php do_action( 'bp_before_blog_home' ) ?>
 
 		<div class="page" id="blog-latest">
+		<img src="<?php bloginfo('stylesheet_directory') ?>/images/pages/<?= $posts[0]->ID ?>.gif" />
 
 			<?php 
 				global $query_string;
@@ -24,6 +25,9 @@
 				<?php while (have_posts()) : the_post(); ?>
 
 					<?php do_action( 'bp_before_blog_post' ) ?>
+
+					<?php global $more; global $testme; ?>
+					<?php $more = 0; $testme = "testme" ?>
 
 					<?php include "post.php" ?>
 

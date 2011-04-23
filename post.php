@@ -5,8 +5,6 @@
 	</h2>
 
 	<div class="entry">
-		<?php echo $more; ?>
-		<?php echo $testme; ?>
 		<?php the_content( __( 'Read the entire post...', 'buddypress' ) ); ?>
 
 

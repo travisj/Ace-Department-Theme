@@ -87,6 +87,9 @@
 					<?php endif; ?>
 				<?php endif; ?>
 				<?php if ( is_user_logged_in() ) : ?>
+				<li <?php if ( $post->post_name === 'chat' ) : ?> class="selected"<?php endif; ?>>
+					<a href="/chat">Chat</a>
+				</li>
 				<li>
 					<a href="<?php echo bp_loggedin_user_domain() ?>/messages">Inbox</a>
 				</li>
