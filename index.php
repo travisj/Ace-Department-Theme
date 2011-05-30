@@ -20,9 +20,12 @@
 
 						<div class="post" id="post-<?php the_ID(); ?>">
 
+							<img src="/wp-content/themes/Ace-Department-Theme/images/WelcomeHeader.gif" />
+							<!--
 							<h2 class="posttitle">
 								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'buddypress' ) ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 							</h2>
+							-->
 
 							<div class="entry">
 								<?php the_content( __( 'Read the entire post...', 'buddypress' ) ); ?>
