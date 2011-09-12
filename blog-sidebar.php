@@ -1,7 +1,7 @@
 
 <div class="blog sidebar">
 	<div class="sidebar-box search">
-		<?php include "search-form.php"; ?>
+		<?php display_search_box(DISPLAY_RESULTS_AS_POP_UP); ?>
 	</div>
 
 	<div class="sidebar-box contact">
@@ -19,15 +19,5 @@
 	<div class="sidebar-box ask-ace">
 		<a href="/contact">Ask Ace</a>
 	</div>
-
-	
-
-	<div class="sidebar-box also-like">
-		<h4>You May Also Like...</h4>
-		<div class="linkwithin_div"></div>
-	</div>
-
-	<?php # include "test-linkwithin.php" ?>
-
 </div>
 

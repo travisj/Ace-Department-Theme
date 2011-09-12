@@ -10,22 +10,20 @@
 
 		<div class="page" id="blog-latest">
 
-			<?php query_posts('cat=11&post_status=publish,future');?>
+			<?php //query_posts('cat=11&post_status=publish,future');?>
 			<?php if ( have_posts() ) : ?>
 
+				<img src="/wp-content/themes/Ace-Department-Theme/images/WelcomeHeader.gif" />
 				<?php while (have_posts()) : the_post(); ?>
 				<?php $post_count++ ?>
 
-					<?php if($post_count == 1) : ?>
+						<?php if($post_count > 1) : ?>
 
 						<div class="post" id="post-<?php the_ID(); ?>">
 
-							<img src="/wp-content/themes/Ace-Department-Theme/images/WelcomeHeader.gif" />
-							<!--
 							<h2 class="posttitle">
 								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'buddypress' ) ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 							</h2>
-							-->
 
 							<div class="entry">
 								<?php the_content( __( 'Read the entire post...', 'buddypress' ) ); ?>
@@ -79,12 +77,26 @@
 		<div class="home sidebar">
 
 			<div class="sidebar-box search">
-				<?php include "search-form.php"; ?>
+				<?php display_search_box(DISPLAY_RESULTS_AS_POP_UP); ?>
 			</div>
+
+			<div class="sidebar-box contact">
+				<a href="http://twitter.com/acedept" class="twitter">Twitter</a>
+				<a href="http://www.facebook.com/pages/Ace-Department/173136476045079" class="facebook">Facebook</a>
+				<a href="http://www.acedepartment.com/feed/" class="rss">RSS</a>
+				<a href="/contact" class="contact">Contact</a>
+			</div>
+
 			<div class="sidebar-box about">
 				<h2>welcome</h2>
 				<p>
 				 Imagine a room filled with the smartest, kindest people you know. Good ideas abound, the room itself is beautiful, you're smiling. Ace Dept is that room.
+			 </p>
+			 <p>
+				 Ace is a community space for women who own and operate small businesses. Think of it as a place to gather around shared goals with fellow entrepreneurs, following different paths to similar goals.
+			 </p>
+			 <p>
+				 Why, Ace? <a href="http://www.acedepartment.com/blog/2011/03/22/why-ace/">Read more about our inspiration here.</a>
 			 </p>
 			</div>
 
