@@ -17,7 +17,7 @@
 				<?php while (have_posts()) : the_post(); ?>
 				<?php $post_count++ ?>
 
-						<?php if($post_count > 1) : ?>
+						<?php if($post_count < 5) : ?>
 
 						<div class="post" id="post-<?php the_ID(); ?>">
 
@@ -100,6 +100,28 @@
 			 </p>
 			</div>
 
+			<div style="text-align:center">
+			<a href="/membership/">
+			<img src="/wp-content/themes/Ace-Department-Theme/images/joinace.gif" />
+			</a>
+			</div>
+
+<!-- Begin MailChimp Signup Form -->
+<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+       #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;padding-bottom: 35px;margin-top: 20px;margin-bottom:20px;text-align:center; border-top: 1px dotted #CDCDCD; border-bottom: 1px dotted #CDCDCD; }
+       /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+          We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="http://acedepartment.us2.list-manage.com/subscribe/post?u=991e18849d1543206b22aeebe&amp;id=02c7adbd12" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+       <label for="mce-EMAIL">Subscribe to our newsletter</label>
+       <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+       <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
 			<div class="sidebar-box twitter">
 				<h2>tweets </h2>
 

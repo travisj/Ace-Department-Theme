@@ -10,5 +10,14 @@ Tags: buddypress
 */
 
 @import url( ../../plugins/buddypress/bp-themes/bp-default/_inc/css/default.css );
-@import url( ../../plugins/buddypress/bp-themes/bp-default/_inc/css/adminbar.css );
+/*@import url( ../../plugins/buddypress/bp-themes/bp-default/_inc/css/adminbar.css );*/
 @import url(main.css);
+
+#nav ul {
+	border:0;
+	box-shadow:0 0 0 0;
+}
+
+#footer {
+	padding: 15px;
+}

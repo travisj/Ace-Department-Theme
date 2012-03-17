@@ -10,7 +10,7 @@
 		<?php do_action( 'bp_before_blog_home' ) ?>
 
 		<div class="page" id="blog-latest">
-		<img src="<?php bloginfo('stylesheet_directory') ?>/images/pages/<?= $posts[0]->ID ?>.gif" />
+		<img src="<?php bloginfo('stylesheet_directory') ?>/images/pages/<?php echo $posts[0]->ID ?>.gif" />
 
 			<?php 
 				global $query_string;
